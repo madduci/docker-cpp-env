@@ -2,9 +2,9 @@ FROM alpine:3.7
 
 LABEL maintainer="info@micheleadduci.net"
 
-VOLUME ["/project"]
+VOLUME "/project"
 
-WORKDIR ["/project"]
+WORKDIR "/project"
 
 RUN apk update && \
     apk upgrade && \
@@ -19,4 +19,4 @@ RUN apk update && \
         pip install conan && \
     rm -rf /var/cache/apk/* 
 
-ENTRYPOINT [ "bash" ]
+ENTRYPOINT [ "bash", "-c" ]
