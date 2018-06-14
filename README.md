@@ -1,10 +1,10 @@
 # docker-cpp-env
 
-Minimal C++ development environment including gcc, CMake and conan, using Alpine Linux
+Minimal C++ development environment including gcc, CMake, cppcheck and conan, using Alpine Linux
 
 ## Caveats
 
-The working directory is set to `/porject` and this is a folder that should be mounted from your host system to the docker image.
+The working directory is set to `/project` and this is a folder that should be mounted from your host system to the docker image.
 
 The image exposes as entrypoint the command `bash -c`, which allows you to give a sequence of commands, all included in quotation symbols (`""`) and let bash execute them. Alternatively, you can override the entrypoint by passing `--entrypoint whatever_you_want` as argument to `docker` command.
 
@@ -12,7 +12,7 @@ The image exposes as entrypoint the command `bash -c`, which allows you to give 
 
 ### conan based projects
 
-`docker run --rm -it -v $(pwd):/project madduci/docker-cpp-env:latest "mkdir -p build && cd build && conan install .. && cmake .. && make"`
+`docker run --rm -it -v $(pwd):/project madduci/docker-cpp-env:latest "mkdir -p build && cd build && conan install .. && conan build .."`
 
 ### CMake based projects
 

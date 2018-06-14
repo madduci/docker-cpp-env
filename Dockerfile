@@ -1,6 +1,6 @@
-FROM alpine:3.7
+FROM alpine:latest
 
-LABEL maintainer="info@micheleadduci.net"
+LABEL maintainer="Michele Adduci <info@micheleadduci.net>"
 
 VOLUME "/project"
 
@@ -15,8 +15,9 @@ RUN apk update && \
         cmake \
         bash \
         libstdc++ \
+        cppcheck \
         py-pip && \
         pip install conan && \
-    rm -rf /var/cache/apk/* 
+    rm -rf /var/cache/apk/*
 
 ENTRYPOINT [ "bash", "-c" ]
