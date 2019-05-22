@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-LABEL maintainer="Michele Adduci <info@micheleadduci.net>"
+LABEL maintainer="Michele Adduci <adduci.michele@gmail.com>"
 
 VOLUME "/project"
 
